@@ -1,7 +1,6 @@
 # Demyst-Code-Ex
 
-This project built with angular + spring boot on ubuntu
-Used docker for containerization
+This project built with angular + spring boot on ubuntu, used docker for containerizing an application
 
 --prerequisite
 
