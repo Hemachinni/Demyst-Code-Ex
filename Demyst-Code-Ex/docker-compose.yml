@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+    backend:
+        image: demo-final
+        container_name: demo-final
+        build:
+            context: ./demo
+        ports:
+            - "80:80"
+    frontend:
+        image: demo-ui-final        
+        container_name: demo-ui-final
+        build:
+            context: ./demo-ui
+        ports:
+            - "4400:80"
+        working_dir: /app
+        volumes:
+          - '.:/app'        
+        depends_on:
+            - backend
+    

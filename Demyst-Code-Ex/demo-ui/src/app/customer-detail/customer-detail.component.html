@@ -1,0 +1,40 @@
+<div class="container col-md-4">
+  <!-- Submit Loan Application Form -->
+  <form [formGroup]="cusForm" (ngSubmit)="submitLoanApplication(cusForm.value)" *ngIf="!submitted">
+    <h3><b>Loan Business Details</b></h3>
+
+    <!-- Customer Name -->
+    <label for="customerName">Name:</label>
+    <input id="customerName" type="text" placeholder="E.g. Monkey D. Luffy" class="form-control"
+      formControlName="customerName">
+
+    <!-- Applied Loan Aamount -->
+    <label for="loanAmount">Loan Amount:</label>
+    <input id="loanAmount" type="number" placeholder="15000" class="form-control" formControlName="loanAmount">
+
+    <!-- Applied Loan Aamount -->
+    <label for="appliedYear">AppliedYear:</label>
+    <input id="appliedYear" type="date" placeholder="15000" class="form-control" formControlName="appliedYear">
+
+    <label for="profitOrLoss">ProfitOrLoss:</label>
+    <input id="profitOrLoss" type="number" placeholder="15000" class="form-control" formControlName="profitOrLoss">
+
+    <label for="assetValue">Asset Value:</label>
+    <input id="assetValue" type="number" placeholder="15000" class="form-control" formControlName="assetValue">
+
+    <label for="accountingProviders">Accounting Provider:</label>
+    <select id="accountingProviders" formControlName="accountingProviders">
+      <option [ngValue]="null" disabled>Choose your accountingProviders</option>
+      <option *ngFor="let ap of accountingProviders" [ngValue]="ap.name">
+        {{ ap.name }}
+      </option>
+    </select>
+    <button class="btn btn-primary apply">FetchBalanceSheet</button>
+  </form>
+
+  <!-- Thank You Component-->
+  <div class="full-height" *ngIf="submitted">
+    <h3>Thank You</h3>
+    <p>Your application has been submitted. Please check your mail for details.</p>
+  </div>
+</div>

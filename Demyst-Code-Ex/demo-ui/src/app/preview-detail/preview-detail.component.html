@@ -1,0 +1,27 @@
+<div class="container col-md-4">
+  <h3><b>Preview The Details</b></h3>
+  <!-- Form for Calculating EMI -->
+  <form [formGroup]="rForm" (ngSubmit)="submitDetails(rForm.value)">
+
+    <!-- Customer Name -->
+    <div>
+      <label for="customerName"><span>Name:{{ customerName }}</span> </label>
+    </div>
+    <div>
+      <label for="loanAmount">Loan Amount:{{ loanAmount }}</label>
+    </div>
+    <!-- Applied Loan Aamount -->
+    <div>
+      <label for="appliedYear">AppliedYear: {{ appliedYear }}</label>
+    </div>
+    <div>
+      <label for="profitOrLoss">ProfitOrLoss:{{ profitOrLoss }}</label>
+    </div>
+    <div><label for="assetValue">Asset Value:{{ assetValue }}</label></div>
+
+    <div>
+      <label for="accountingProviders">Accounting Provider:{{ accountingProviders }}</label>
+    </div>
+    <button class="btn btn-primary apply">Submit</button>
+  </form>
+</div>
